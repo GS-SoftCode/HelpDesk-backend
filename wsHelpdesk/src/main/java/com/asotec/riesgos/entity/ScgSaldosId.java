@@ -19,9 +19,25 @@ import javax.validation.constraints.Size;
 @Embeddable
 public class ScgSaldosId implements Serializable {
 
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 20)
+    @Column(name = "cod_cuenta", length = 20)
     private String codCuenta;
+    
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "cod_aaa", precision = 4, scale = 0)
     private long codAaa;
+    
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "cod_mes", precision = 2, scale = 0)
     private long codMes;
+    
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "cod_moneda", precision = 2, scale = 0)
     private long codMoneda;
 
     public ScgSaldosId() {
@@ -34,10 +50,6 @@ public class ScgSaldosId implements Serializable {
         this.codMoneda = codMoneda;
     }
 
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 20)
-    @Column(name = "cod_cuenta", length = 20)
     public String getCodCuenta() {
         return codCuenta;
     }
@@ -46,9 +58,6 @@ public class ScgSaldosId implements Serializable {
         this.codCuenta = codCuenta;
     }
 
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "cod_aaa", precision = 4, scale = 0)
     public long getCodAaa() {
         return codAaa;
     }
@@ -57,9 +66,6 @@ public class ScgSaldosId implements Serializable {
         this.codAaa = codAaa;
     }
 
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "cod_mes", precision = 2, scale = 0)
     public long getCodMes() {
         return codMes;
     }
@@ -68,9 +74,6 @@ public class ScgSaldosId implements Serializable {
         this.codMes = codMes;
     }
 
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "cod_moneda", precision = 2, scale = 0)
     public long getCodMoneda() {
         return codMoneda;
     }

@@ -29,4 +29,12 @@ public class SgtEmpresaService extends GenericService<SgtEmpresa> implements ISg
     public SgtEmpresaService() {
         super();
     }
+    
+    /**
+     * Inicializa el DAO del servicio genérico después de inyección
+     */
+    @javax.annotation.PostConstruct
+    public void init() {
+        setDao(this.dao);
+    }
 }

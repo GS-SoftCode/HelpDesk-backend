@@ -10,6 +10,7 @@ import com.asotec.riesgos.entity.SgtTicketSolicitante;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Base64;
 import java.util.Date;
 import java.util.Properties;
 import java.util.logging.Level;
@@ -20,6 +21,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.support.PropertiesLoaderUtils;
 import org.springframework.mail.MailException;
@@ -66,16 +68,18 @@ public class emailService {
     }
     
     //metodo para enviar un email con una plantilla preparada para la creacion del ticket
-    public void senMailTicketCreation(SgtTicketSolicitante solicitante,SgtTicket ticket){
+    public void senMailTicketCreation(
+        SgtTicketSolicitante solicitante,
+        SgtTicket ticket,
+        String img1,
+        String img2
+        ){
         try {
             MimeMessage message = emailSender.createMimeMessage();
-            MimeMessageHelper helper = new MimeMessageHelper(message, true);
+            MimeMessageHelper helper = new MimeMessageHelper(message, true);  // true = multipart
 
             // Set From: header field of the header.
             helper.setFrom(new InternetAddress("no-reply@adelca.com"));
-            //helper.addRecipient( Message.RecipientType.TO, new InternetAddress( "soporte.asotec@hotmail.com" ) );
-
-            //helper.setFrom("soporte.asotec@hotmail.com");
             helper.setTo(solicitante.getEmailSolicitante());
             helper.setSubject(ticket.getTxtTitulo());
             
@@ -84,6 +88,7 @@ public class emailService {
             
             String fechaCreacion = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(ticket.getFecCreacion());
             
+            // Construir el HTML del correo
             String text="<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"600\" style=\"border-collapse: collapse;\">\n"
             + "    <tr>\n"
             + "        <td align=\"center\" bgcolor=\"#ffffff\" style=\"padding: 20px; color:#000\">\n"
@@ -109,13 +114,41 @@ public class emailService {
             + "    </tr>\n"
             + "</table>";
             
-            message.setContent(text, "text/html; charset=utf-8");
-            //helper.setText(text);
+            // Establecer el contenido HTML del correo
+            helper.setText(text, true);  // true = es HTML
+            
+            // ADJUNTAR IMÁGENES (ANTES de enviar)
+            if (img1 != null && !img1.isEmpty()) {
+                try {
+                    // Separar el prefijo "data:image/png;base64," de los datos
+                    String base64Data = img1.contains(",") ? img1.split(",")[1] : img1;
+                    byte[] imagen1Bytes = Base64.getDecoder().decode(base64Data);
+                    helper.addAttachment("imagen1.png", new ByteArrayResource(imagen1Bytes));
+                } catch (Exception e) {
+                    Logger.getLogger(emailService.class.getName()).log(Level.WARNING, 
+                        "Error al adjuntar imagen1: " + e.getMessage());
+                }
+            }
+            
+            if (img2 != null && !img2.isEmpty()) {
+                try {
+                    String base64Data = img2.contains(",") ? img2.split(",")[1] : img2;
+                    byte[] imagen2Bytes = Base64.getDecoder().decode(base64Data);
+                    helper.addAttachment("imagen2.jpg", new ByteArrayResource(imagen2Bytes));
+                } catch (Exception e) {
+                    Logger.getLogger(emailService.class.getName()).log(Level.WARNING, 
+                        "Error al adjuntar imagen2: " + e.getMessage());
+                }
+            }
+            
+            // ENVIAR EL EMAIL (una sola vez, con todas las imágenes adjuntas)
             emailSender.send(message);
-            String msg = "Email enviado login  bandeja:" + message;
+            
+            String msg = "Email enviado correctamente a: " + solicitante.getEmailSolicitante();
             Logger.getLogger(emailService.class.getName()).log(Level.INFO, msg);
+        
         } catch (MessagingException | MailException e) {
-            String msg = "Error al sincronizar Email no enviado  bandeja:" + e.getMessage();
+            String msg = "Error al enviar email: " + e.getMessage();
             System.out.println(msg);
             Logger.getLogger(emailService.class.getName()).log(Level.WARNING, msg);
         }

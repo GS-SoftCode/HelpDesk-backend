@@ -42,6 +42,7 @@ com\asotec\riesgos\controller\ComentarioController.class
 com\asotec\riesgos\generadorzip\GeneradorZip.class
 com\asotec\riesgos\util\Respuesta.class
 com\asotec\riesgos\controller\UsuarioController.class
+com\asotec\riesgos\entity\TicketSolicitante.class
 com\asotec\riesgos\service\SgfProductoFinancieroService.class
 com\asotec\riesgos\service\ISgfInversionesService.class
 com\asotec\riesgos\service\SgfOperacionCreditoService.class

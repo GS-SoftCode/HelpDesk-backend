@@ -174,7 +174,8 @@ public class TicketController {
         //enviar el email
         log.info("Solicitante.getCodTicket: "+ solicTick.getCodTicket()+" ticket.getCodTicket: "+ticket.getCodTicket());
         try {
-            emailSrv.senMailTicketCreation(solicitante, respTicket);
+            // Pasar las imágenes al servicio de email
+            emailSrv.senMailTicketCreation(solicitante, respTicket, ticketSol.getImg1(), ticketSol.getImg2());
             // Éxito
             return Response.get(0,"Email enviado correctamente","El ticket fue creado y se envió el correo a " + solicitante.getEmailSolicitante(),HttpStatus.CREATED);
 
