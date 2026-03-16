@@ -33,6 +33,8 @@ public class SgtTicket implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cod_ticket")
     private long codTicket;
+    @Column(name = "cod_empresa", precision = 10, scale = 0)
+    private long codEmpresa;
     @Column(name = "txt_titulo", length = 100)
     private String txtTitulo;
     @Column(name = "txt_desc", length = 2000)
@@ -47,14 +49,16 @@ public class SgtTicket implements Serializable{
     private String codTecnico;
     @Column(name = "cod_estado", precision = 2, scale = 0)
     private long codEstado;
-    @Column(name = "cod_empresa", precision = 10, scale = 0)
-    private long codEmpresa;
-    
+    @Column(name = "tfno_cliente", length = 10)
+    private String tfnoCliente;
+    @Column(name = "type_remote", length = 30)
+    private String typeRemote;
+    @Column(name = "cod_remote", length = 20)
+    private String codRemote;
+    @Column(name = "pass_remote", length = 20)
+    private String passRemote;
 
-    public SgtTicket() {
-        
-    }
-
+    public SgtTicket() {}
     public SgtTicket(long codTicket, String txtTitulo, String txtDesc, Date fecCreacion, String codCliente, String codTecnico, long codEstado, long codEmpresa) {
         this.codTicket = codTicket;
         this.txtTitulo = txtTitulo;
@@ -64,6 +68,10 @@ public class SgtTicket implements Serializable{
         this.codTecnico = codTecnico;
         this.codEstado = codEstado;
         this.codEmpresa = codEmpresa;
+        this.tfnoCliente = tfnoCliente;
+        this.typeRemote = typeRemote;
+        this.codRemote = codRemote;
+        this.passRemote = passRemote;
     }
     
     public long getCodTicket() {
@@ -128,6 +136,38 @@ public class SgtTicket implements Serializable{
 
     public void setCodEmpresa(long codEmpresa) {
         this.codEmpresa = codEmpresa;
+    }
+
+    public String getTfnoCliente() {
+        return tfnoCliente;
+    }
+
+    public void setTfnoCliente(String tfnoCliente) {
+        this.tfnoCliente = tfnoCliente;
+    }
+
+    public String getTypeRemote() {
+        return typeRemote;
+    }
+
+    public void setTypeRemote(String typeRemote) {
+        this.typeRemote = typeRemote;
+    }
+
+    public String getCodRemote() {
+        return codRemote;
+    }
+
+    public void setCodRemote(String codRemote) {
+        this.codRemote = codRemote;
+    }
+
+    public String getPassRemote() {
+        return passRemote;
+    }
+
+    public void setPassRemote(String passRemote) {
+        this.passRemote = passRemote;
     }
     
 }
