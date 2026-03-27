@@ -11,6 +11,7 @@ A:\PRACTICAS\HelpDesk\helpdesk-back\wsHelpdesk\src\main\java\com\asotec\riesgos\
 A:\PRACTICAS\HelpDesk\helpdesk-back\wsHelpdesk\src\main\java\com\asotec\riesgos\entity\SgfTipoEmisorDepositario.java
 A:\PRACTICAS\HelpDesk\helpdesk-back\wsHelpdesk\src\main\java\com\asotec\riesgos\exception\InvalidAttributeException.java
 A:\PRACTICAS\HelpDesk\helpdesk-back\wsHelpdesk\src\main\java\com\asotec\riesgos\entity\GenEmpleado.java
+A:\PRACTICAS\HelpDesk\helpdesk-back\wsHelpdesk\src\main\java\com\asotec\riesgos\dao\ISgtClienteDao.java
 A:\PRACTICAS\HelpDesk\helpdesk-back\wsHelpdesk\src\main\java\com\asotec\riesgos\dao\GenericDao.java
 A:\PRACTICAS\HelpDesk\helpdesk-back\wsHelpdesk\src\main\java\com\asotec\riesgos\entity\SgfCalificacionRiesgoNormativa.java
 A:\PRACTICAS\HelpDesk\helpdesk-back\wsHelpdesk\src\main\java\com\asotec\riesgos\entity\SgfReclamos.java
@@ -41,6 +42,7 @@ A:\PRACTICAS\HelpDesk\helpdesk-back\wsHelpdesk\src\main\java\com\asotec\riesgos\
 A:\PRACTICAS\HelpDesk\helpdesk-back\wsHelpdesk\src\main\java\com\asotec\riesgos\util\NoResultException.java
 A:\PRACTICAS\HelpDesk\helpdesk-back\wsHelpdesk\src\main\java\com\asotec\riesgos\entity\SgfReclamosId.java
 A:\PRACTICAS\HelpDesk\helpdesk-back\wsHelpdesk\src\main\java\com\asotec\riesgos\service\ISgfDacionPagoService.java
+A:\PRACTICAS\HelpDesk\helpdesk-back\wsHelpdesk\src\main\java\com\asotec\riesgos\service\ISgtClienteService.java
 A:\PRACTICAS\HelpDesk\helpdesk-back\wsHelpdesk\src\main\java\com\asotec\riesgos\entity\GenUsuario.java
 A:\PRACTICAS\HelpDesk\helpdesk-back\wsHelpdesk\src\main\java\com\asotec\riesgos\entity\SgfInversionesId.java
 A:\PRACTICAS\HelpDesk\helpdesk-back\wsHelpdesk\src\main\java\com\asotec\riesgos\service\SgtTecnicoService.java
@@ -83,12 +85,15 @@ A:\PRACTICAS\HelpDesk\helpdesk-back\wsHelpdesk\src\main\java\com\asotec\riesgos\
 A:\PRACTICAS\HelpDesk\helpdesk-back\wsHelpdesk\src\main\java\com\asotec\riesgos\dao\IGenericDao.java
 A:\PRACTICAS\HelpDesk\helpdesk-back\wsHelpdesk\src\main\java\com\asotec\riesgos\entity\ScgTmpSaldos.java
 A:\PRACTICAS\HelpDesk\helpdesk-back\wsHelpdesk\src\main\java\com\asotec\riesgos\service\SgfDacionPagoService.java
+A:\PRACTICAS\HelpDesk\helpdesk-back\wsHelpdesk\src\main\java\com\asotec\riesgos\dao\SgtClienteDao.java
 A:\PRACTICAS\HelpDesk\helpdesk-back\wsHelpdesk\src\main\java\com\asotec\riesgos\dao\ISgtTicketDao.java
 A:\PRACTICAS\HelpDesk\helpdesk-back\wsHelpdesk\src\main\java\com\asotec\riesgos\dao\SgfInversionesDao.java
 A:\PRACTICAS\HelpDesk\helpdesk-back\wsHelpdesk\src\main\java\com\asotec\riesgos\service\IUsuarioService.java
 A:\PRACTICAS\HelpDesk\helpdesk-back\wsHelpdesk\src\main\java\com\asotec\riesgos\entity\TicketSolicitante.java
+A:\PRACTICAS\HelpDesk\helpdesk-back\wsHelpdesk\src\main\java\com\asotec\riesgos\entity\SgtCliente.java
 A:\PRACTICAS\HelpDesk\helpdesk-back\wsHelpdesk\src\main\java\com\asotec\riesgos\service\SgfInversionesService.java
 A:\PRACTICAS\HelpDesk\helpdesk-back\wsHelpdesk\src\main\java\com\asotec\riesgos\service\ISgfProductoFinancieroService.java
+A:\PRACTICAS\HelpDesk\helpdesk-back\wsHelpdesk\src\main\java\com\asotec\riesgos\controller\ClienteController.java
 A:\PRACTICAS\HelpDesk\helpdesk-back\wsHelpdesk\src\main\java\com\asotec\riesgos\dao\SgtTicketSolicitandeDao.java
 A:\PRACTICAS\HelpDesk\helpdesk-back\wsHelpdesk\src\main\java\com\asotec\riesgos\service\ISgtTecnicoService.java
 A:\PRACTICAS\HelpDesk\helpdesk-back\wsHelpdesk\src\main\java\com\asotec\riesgos\dao\ISgtTecnicoDao.java
@@ -100,6 +105,7 @@ A:\PRACTICAS\HelpDesk\helpdesk-back\wsHelpdesk\src\main\java\com\asotec\riesgos\
 A:\PRACTICAS\HelpDesk\helpdesk-back\wsHelpdesk\src\main\java\com\asotec\riesgos\exception\NoResultException.java
 A:\PRACTICAS\HelpDesk\helpdesk-back\wsHelpdesk\src\main\java\com\asotec\riesgos\entity\SgfInstrumento.java
 A:\PRACTICAS\HelpDesk\helpdesk-back\wsHelpdesk\src\main\java\com\asotec\riesgos\service\IOficinaService.java
+A:\PRACTICAS\HelpDesk\helpdesk-back\wsHelpdesk\src\main\java\com\asotec\riesgos\service\SgtClienteService.java
 A:\PRACTICAS\HelpDesk\helpdesk-back\wsHelpdesk\src\main\java\com\asotec\riesgos\util\Validation.java
 A:\PRACTICAS\HelpDesk\helpdesk-back\wsHelpdesk\src\main\java\com\asotec\riesgos\entity\ScgCuenta.java
 A:\PRACTICAS\HelpDesk\helpdesk-back\wsHelpdesk\src\main\java\com\asotec\riesgos\util\Convert.java

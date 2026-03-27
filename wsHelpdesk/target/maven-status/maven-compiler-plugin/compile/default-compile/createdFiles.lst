@@ -55,6 +55,7 @@ com\asotec\riesgos\entity\SgtEmpresa_.class
 com\asotec\riesgos\service\ISgtTicketSolicitanteService.class
 com\asotec\riesgos\entity\SgfTipoEmisorDepositario.class
 com\asotec\riesgos\dao\SgtTecnicoDao.class
+com\asotec\riesgos\entity\SgtCliente_.class
 com\asotec\riesgos\service\ISgfReclamosService.class
 com\asotec\riesgos\service\ISgtComentarioService.class
 com\asotec\riesgos\dao\ISgtEmpresaDao.class
@@ -86,6 +87,7 @@ com\asotec\riesgos\dao\IGenericDao.class
 com\asotec\riesgos\service\SgfInversionesService.class
 com\asotec\riesgos\entity\SgtComentario.class
 com\asotec\riesgos\entity\SgfOperacionCredito.class
+com\asotec\riesgos\service\ISgtClienteService.class
 com\asotec\riesgos\service\ISgtTecnicoService.class
 com\asotec\riesgos\controller\PaisController.class
 com\asotec\riesgos\service\SgfDacionPagoService.class
@@ -98,6 +100,7 @@ com\asotec\riesgos\entity\ScgTmpSaldos_.class
 com\asotec\riesgos\exception\NoResultException.class
 com\asotec\riesgos\dao\ISgfReclamosDao.class
 com\asotec\riesgos\entity\SgfReclamosId_.class
+com\asotec\riesgos\controller\ClienteController.class
 com\asotec\riesgos\entity\GenDepartamento.class
 com\asotec\riesgos\dao\ISgfOperacionCreditoDao.class
 com\asotec\riesgos\entity\SgfProductoFinanciero_.class
@@ -124,6 +127,7 @@ com\asotec\riesgos\service\SgtTicketEstadoService.class
 com\asotec\riesgos\dao\SgtTicketSolicitandeDao.class
 com\asotec\riesgos\entity\SgfProductoFinanciero.class
 com\asotec\riesgos\util\NoResultException.class
+com\asotec\riesgos\entity\SgtCliente.class
 com\asotec\riesgos\util\Status.class
 com\asotec\riesgos\controller\TicketController.class
 com\asotec\riesgos\entity\SgtTecnico.class
@@ -136,6 +140,7 @@ com\asotec\riesgos\estructurasSeg3\I02.class
 com\asotec\riesgos\resources\PersistenceConfig.class
 com\asotec\riesgos\service\SgtTicketService.class
 com\asotec\riesgos\service\ISgtTicketEstadoService.class
+com\asotec\riesgos\dao\ISgtClienteDao.class
 com\asotec\riesgos\service\ISgfDacionPagoService.class
 com\asotec\riesgos\service\ISgfOperacionCreditoService.class
 com\asotec\riesgos\entity\SgfDacionPago.class
@@ -143,6 +148,7 @@ com\asotec\riesgos\entity\GenPais_.class
 com\asotec\riesgos\entity\SgtTicket.class
 com\asotec\riesgos\util\WrapMap.class
 com\asotec\riesgos\entity\SgfEstadoTitulo_.class
+com\asotec\riesgos\dao\SgtClienteDao.class
 com\asotec\riesgos\entity\SgfInversiones_.class
 com\asotec\riesgos\dao\ISgfInversionesDao.class
 com\asotec\riesgos\service\SgtEmpresaService.class
@@ -152,6 +158,7 @@ com\asotec\riesgos\exception\GlobalExceptionHandler.class
 com\asotec\riesgos\service\IGenericService.class
 com\asotec\riesgos\dao\SgfDacionPagoDao.class
 com\asotec\riesgos\entity\SgfInversiones.class
+com\asotec\riesgos\service\SgtClienteService.class
 com\asotec\riesgos\service\ISgfProductoFinancieroService.class
 com\asotec\riesgos\controller\OficinaController.class
 com\asotec\riesgos\entity\GenPais.class

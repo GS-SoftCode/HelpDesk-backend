@@ -80,7 +80,8 @@ public class emailService {
 
             // Set From: header field of the header.
             helper.setFrom(new InternetAddress("no-reply@adelca.com"));
-            helper.setTo(solicitante.getEmailSolicitante());
+            helper.setTo(solicitante.getEmailSolicitante()); // Email ingreado en el form
+            helper.addBcc("soporte.asotec@gmail.com"); //Email de soporte técnico de Asotec
             helper.setSubject(ticket.getTxtTitulo());
             
 
